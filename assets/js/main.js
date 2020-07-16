@@ -44,7 +44,7 @@ function addTaskToList (task) {
 			</div>
 			<div class='ml-auto '>
 				<img class='col-auto btn-svg' src='./assets/imgs/svgs/edit.svg' title='Edit This Task'>
-				<img class='col-auto btn-svg' src='./assets/imgs/svgs/delete.svg' title='Delete This Task'>
+				<img class='col-auto btn-svg' src='./assets/imgs/svgs/delete-2.svg' title='Delete This Task'>
 			</div>
 		</li>`;
 	task_list.innerHTML+=task_list_item;
