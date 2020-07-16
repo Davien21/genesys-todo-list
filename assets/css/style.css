@@ -8,18 +8,31 @@ ul,ol {
 	padding: 0;
 	margin: 0;
 }
-#task-count {
+.counter {
+	font-weight: 550;
 	color: #fff;
+	background-color: #FF521B;
 	border: 1px solid;
 	padding: 1.5px 8px;
-	background-color: #FF521B;
 	border-radius: 50%;
+}
+.orange-on-white {
+	color: #FF521B;
+	background-color: #fff;
+}
+.white-on-orange {
+	color: #fff;
+	background-color: #FF521B;
 }
 #tasks-header {
 	/*border-bottom: 2px dashed;*/
 }
 .emphasis {
 	font-weight: 550;
+}
+.cross-text {
+	text-decoration-line: line-through;
+	color: #ABA9A9;
 }
 .less-paper-purple {
 	background-color:#8862E0;

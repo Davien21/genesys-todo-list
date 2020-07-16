@@ -49,9 +49,15 @@
 								</form>
 							</div>
 						</div>
-						<div id="tasks-header" class="row ">
-							<span class="col-auto ">Pending Tasks:</span>
-							<small id="task-count" class="col-auto emphasis material-box">0</small>
+						<div id="tasks-header" class="row justify-content-between">
+							<div class="pl-0 d-flex  ">
+								<small class="col ">Pending:</small>
+								<small id="pending-count" class="col-auto white-on-orange counter material-box">0</small>
+							</div>
+							<div class="pl-0 ml-md-auto d-flex col-auto ">
+								<small class="col ">Total:</small>
+								<small id="task-count" class="col-auto counter orange-on-white material-box">0</small>
+							</div>
 						</div>
 						<hr class="mt-2">
 						<ol id="task-display" class=" list-group">
