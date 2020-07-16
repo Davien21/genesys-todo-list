@@ -1,6 +1,7 @@
 body {
-	    background-color: #FAEBD7;
-        overflow-wrap: break-word;
+    background-color: #FAEBD7;
+    overflow-wrap: break-word;
+    min-height: 100vh;
 }
 ul,ol {
 	/*list-style: none;*/
