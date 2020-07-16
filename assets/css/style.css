@@ -1,0 +1,58 @@
+body {
+	    /*background-color: darkgray;*/
+	    /*background-color: #4DABF5;*/
+	    /*background-color: #8ECDFF;*/
+	    /*background-color: #A5D7FF;*/
+	    /*background-color: #DEF0FF;*/
+        /*background-color: #d2d2d2;*/
+        overflow-wrap: break-word;
+}
+ul,ol {
+	/*list-style: none;*/
+	padding: 0;
+	margin: 0;
+}
+#task-count {
+	color: #fff;
+	border: 1px solid;
+	padding: 1px 8px;
+	background-color: #FF521B;
+	border-radius: 50%;
+}
+#tasks-header {
+	/*border-bottom: 2px dashed;*/
+}
+.emphasis {
+	font-weight: 550;
+}
+.less-paper-purple {
+	background-color:#8862E0;
+}
+.less-paper-green {
+	background-color:#19D895;
+}
+.less-paper-box-blue {
+	background-color: #4DABF5;
+}
+.less-paper-box-orange {
+	background-color: #FFBF33;
+}
+.less-paper-blue-2 {
+	background-color: #2196F3;
+}
+.tiny-svg {
+	width:30px;
+	height: auto;
+}
+.btn-svg {
+	width:55px;
+	max-height: 35px;
+	height: auto;
+	cursor: pointer;
+}
+.text-def-orange {
+	color: #FF521B;
+}
+.def-orange {
+	background-color: #FF521B;
+}
