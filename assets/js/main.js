@@ -42,10 +42,16 @@ function addTaskToList (task) {
 			<div class='col px-0'>
 				<span class='task'>${task}</span>
 			</div>
-			<div class='ml-auto '>
-				<img class='col-auto px-0 btn-svg' src='./assets/imgs/svgs/check-3.svg' title='Check This Task'>
-				<img class='col-auto px-0 btn-svg' src='./assets/imgs/svgs/edit.svg' title='Edit This Task'>
-				<img class='col-auto px-0 btn-svg' src='./assets/imgs/svgs/delete-2.svg' title='Delete This Task'>
+			<div class='ml-auto row'>
+				<div class=''>
+					<img class='px-0 btn-svg' src='./assets/imgs/svgs/check-3.svg' title='Check This Task'>
+				</div>
+				<div class='px-2'>
+					<img class='px-0 btn-svg' src='./assets/imgs/svgs/edit.svg' title='Edit This Task'>
+				</div>
+				<div class=''>
+					<img class='px-0 btn-svg' src='./assets/imgs/svgs/delete-2.svg' title='Delete This Task'>
+				</div>
 			</div>
 		</li>`;
 	task_list.innerHTML+=task_list_item;
