@@ -21,19 +21,19 @@ function handleAddTask(task) {
 function displayAddTaskError(error) {
 	alert(error);
 }
-function check_if_task_exists (task) {
-	for (let i in task_list) {
-		console.log(i)
-	}
-}
-// check_if_task_exists()
+
 function addTask (task) {
 	addTaskToList(formatted_text(task));
 	increaseTaskCounter();
 
 }
+function crossTask (task) {
+	addTaskToList(formatted_text(task));
+	increaseTaskCounter();
+
+}
 function increaseTaskCounter () {
-	 task_counter.innerText++;
+	task_counter.innerText++;
 console.log(task_list)
 }
 function addTaskToList (task) {
