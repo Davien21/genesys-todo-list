@@ -1,10 +1,5 @@
 body {
-	    /*background-color: darkgray;*/
-	    /*background-color: #4DABF5;*/
-	    /*background-color: #8ECDFF;*/
-	    /*background-color: #A5D7FF;*/
-	    /*background-color: #DEF0FF;*/
-        /*background-color: #d2d2d2;*/
+	    background-color: #FAEBD7;
         overflow-wrap: break-word;
 }
 ul,ol {
@@ -45,9 +40,9 @@ ul,ol {
 	height: auto;
 }
 .btn-svg {
-	width:55px;
-	max-height: 35px;
-	height: auto;
+	width: 30px;
+	height: 25px;
+
 	cursor: pointer;
 }
 .text-def-orange {

@@ -38,13 +38,14 @@ console.log(task_list)
 }
 function addTaskToList (task) {
 	let task_list_item = 
-		`<li class="col-12 d-flex mb-2">
-			<div>
+		`<li class="col-12 d-flex flex-wrap list-group-item paper-box-shadow">
+			<div class='col px-0'>
 				<span class='task'>${task}</span>
 			</div>
 			<div class='ml-auto '>
-				<img class='col-auto btn-svg' src='./assets/imgs/svgs/edit.svg' title='Edit This Task'>
-				<img class='col-auto btn-svg' src='./assets/imgs/svgs/delete-2.svg' title='Delete This Task'>
+				<img class='col-auto px-0 btn-svg' src='./assets/imgs/svgs/check-3.svg' title='Check This Task'>
+				<img class='col-auto px-0 btn-svg' src='./assets/imgs/svgs/edit.svg' title='Edit This Task'>
+				<img class='col-auto px-0 btn-svg' src='./assets/imgs/svgs/delete-2.svg' title='Delete This Task'>
 			</div>
 		</li>`;
 	task_list.innerHTML+=task_list_item;
