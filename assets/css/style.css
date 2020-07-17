@@ -3,15 +3,8 @@ body {
     overflow-wrap: break-word;
     min-height: 100vh;
 }
-ul,ol {
-	/*list-style: none;*/
-	padding: 0;
-	margin: 0;
-}
 .counter {
 	font-weight: 550;
-	color: #fff;
-	background-color: #FF521B;
 	border: 1px solid;
 	padding: 1.5px 8px;
 	border-radius: 50%;
@@ -24,30 +17,13 @@ ul,ol {
 	color: #fff;
 	background-color: #FF521B;
 }
-#tasks-header {
-	/*border-bottom: 2px dashed;*/
-}
+
 .emphasis {
 	font-weight: 550;
 }
 .cross-text {
 	text-decoration-line: line-through;
 	color: #ABA9A9;
-}
-.less-paper-purple {
-	background-color:#8862E0;
-}
-.less-paper-green {
-	background-color:#19D895;
-}
-.less-paper-box-blue {
-	background-color: #4DABF5;
-}
-.less-paper-box-orange {
-	background-color: #FFBF33;
-}
-.less-paper-blue-2 {
-	background-color: #2196F3;
 }
 .tiny-svg {
 	width:30px;
@@ -64,4 +40,43 @@ ul,ol {
 }
 .def-orange {
 	background-color: #FF521B;
+}
+.text-cursor {
+	cursor: text;
+}
+.paper-box {
+	border-radius: 12px;
+	box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+	background-color: #fff;
+}
+.paper-box-shadow {
+	box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+}
+.material-box {
+	box-shadow: 0px 1.5px 1px 0px #A2ABB1;
+}
+.btn-orange {
+	color: #fff;
+	background-color: #F7772F;
+	border-color: #F7772F;
+}
+.btn-orange:hover {
+	color: #fff;
+	background-color: #F0950E;
+	border-color: #FF9800;
+}
+input.task {
+	padding-right: 5 px;
+	width: 100%;
+	border: 0;
+	outline: 0;
+}
+
+.highlight {
+	color: #495057;
+	border-color: #80bdff;
+	outline: 0;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+	border-radius: 0.25rem;
+	transition: 0.15s ease-in-out;
 }

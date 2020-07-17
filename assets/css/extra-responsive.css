@@ -15,6 +15,9 @@
 .sBlue {
 	background-color: dodgerblue;
 }
+.text-cursor {
+	cursor: text;
+}
 .paper-box {
 	border-radius: 12px;
 	box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);

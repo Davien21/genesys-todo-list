@@ -5,11 +5,12 @@
 let add_btn = document.querySelector('#add-btn');
 let task_input = document.querySelector('#task-input');
 let task_form = document.querySelector('form.add-form');
+// let edit_task_form = document.querySelector('form.edit-form');
 let task_list = document.querySelector('#task-display');
 let task_counter = document.querySelector('#task-count');
 let pending_counter = document.querySelector('#pending-count');
 
-//Functions for adding tasks:
+//FUNCTIONS FOR ADDING TASKS:
 function handleAddTask(task) {
 	let task_error = addTaskError(task);
 	if (task_error === false) {
@@ -30,19 +31,17 @@ function addTask (task) {
 }
 function addTaskToList (task) {
 	let task_list_item = 
-		`<li class="col-12 d-flex flex-wrap list-group-item paper-box-shadow">
-			<div class='col px-0'>
-				<span class='task'>${task}</span>
+		`<li class="col-12 d-flex flex-wrap list-group-item paper-box-shadow ">
+			<div class="col px-0 text-cursor">
+				<input class="task" value="${task}" onfocus="editTask(this)"/>
 			</div>
-			<div class='ml-auto row'>
-				<div class='' onclick="toggleCrossTask(this);">
-					<img class='px-0 btn-svg check-img' src='./assets/imgs/svgs/checkbox-2.svg' title='Check This Task'>
+			<div class="ml-auto row">
+				<div class="pr-2" onclick="toggleCrossTask(this);">
+					<img class="px-0 btn-svg check-img" src="./assets/imgs/svgs/checkbox-3.svg" title="Check This Task">
 				</div>
-				<div class='px-2' onclick="editTask(this);">
-					<img class='px-0 btn-svg' src='./assets/imgs/svgs/edit.svg' title='Edit This Task'>
-				</div>
-				<div class='' onclick="deleteTask(this);">
-					<img class='px-0 btn-svg' src='./assets/imgs/svgs/delete-2.svg' title='Delete This Task'>
+				 
+				<div class="" onclick="deleteTask(this);">
+					<img class="px-0 btn-svg" src="./assets/imgs/svgs/delete-2.svg" title="Delete This Task">
 				</div>
 			</div>
 		</li>`;
@@ -57,67 +56,79 @@ let addTaskError = (task) => {
 		return false;
 	}
 }
-let formatted_text = (text) => {
-	let output = text.trim().toLowerCase();
-	output = output.charAt(0).toUpperCase() + output.slice(1);
-	return output;
-}
 
-console.log(add_btn)
-console.log(task_input)
 task_form.onsubmit = () => {
 	event.preventDefault();
 	let task = task_input.value;
 	handleAddTask(task); 
 }
 
-//Functions for crossing tasks:
 
+//FUNCTIONS FOR CROSSING/CHECKING OUT TASKS:
 function toggleCrossTask (btn) {
 	let task_li = btn.closest('li');
-	let task_text = task_li.querySelector('span.task') ;
+	let task_text = task_li.querySelector('.task') ;
 	let check_img = task_li.querySelector('img.check-img');
-	if (!hasClass(task_li,'crossed')) {
-		crossTask(check_img,task_text,task_li);
+	if (!hasClass(task_text,'cross-text')) {
+		crossTask(check_img,task_text);
 	}else {
-		uncrossTask(check_img,task_text,task_li);
+		uncrossTask(check_img,task_text);
 	}
 }
-function crossTask (img,text,li) {
+function crossTask (img,text) {
 	img.src = './assets/imgs/svgs/checked-2.svg';
 	img.title = 'Uncheck This Task';
 	text.classList.add('cross-text');
-	li.classList.add('crossed');
 	decreaseCounter(pending_counter);
-
 }
-function uncrossTask (img,text,li) {
-	img.src = './assets/imgs/svgs/checkbox-2.svg';
+function uncrossTask (img,text) {
+	img.src = './assets/imgs/svgs/checkbox-3.svg';
 	img.title = 'Check This Task';
 	text.classList.remove('cross-text');
-	li.classList.remove('crossed');
 	increaseCounter(pending_counter);
+}
+
+
+//FUNCTIONS FOR EDITING TASKS:
+function editTask (input) {
+	handleEdit(input);
+	input.onblur = () => {
+		input.value = formatted_text(input.value);
+		input.closest('li').classList.remove('highlight');
+	}
 
 }
-let hasClass =  (element,class_name) => {
-	if (Object.values(element.classList).includes(class_name)) {
-		return true;
-	}else {
-		return false;
+function handleEdit (input)  {
+	input.closest('li').classList.add('highlight');
+	input.onkeydown = (e) => {
+		if (e.keyCode === 13) {
+			input.blur();
+		}
 	}
 }
-function editTask (btn) {
-	console.log(btn.closest('li'))
-
+/*These functions are under review for updates to the app*/
+function convertToSpan (argument) {
+	// body... 
 }
+function convertToInput (argument) {
+	// body... 
+}
+/*END OF REVIEW*/
+
+//Functions for deleting tasks:
 function deleteTask (btn) {
-	console.log(btn.closest('li'))
-
+	let task_li = btn.closest('li');
+	let task_text = task_li.querySelector('.task') ;
+	let isDeleting = confirm('Are you sure you want to remove this To Do?');
+	if (isDeleting) {
+		task_li.remove();
+		decreaseCounter(task_counter);
+		if (!hasClass(task_text,'cross-text')) {
+			decreaseCounter(pending_counter);
+		}
+	}
 }
-function displayCross() {
-	
-}
-
+/*These are more general functions, available to any activity*/
 function increaseCounter (element) {
 	element.innerText++;
 }
@@ -125,4 +136,15 @@ function decreaseCounter (element) {
 	element.innerText--;
 }
 
- 
+let hasClass =  (element,class_name) => {
+	if (Object.values(element.classList).includes(class_name)) {
+		return true;
+	}else {
+		return false;
+	}
+}
+let formatted_text = (text) => {
+	let output = text.trim().toLowerCase();
+	output = output.charAt(0).toUpperCase() + output.slice(1);
+	return output;
+}
